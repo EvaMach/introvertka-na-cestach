@@ -23,6 +23,7 @@ const TravelListForm = (): JSX.Element => {
       console.log(values);
     },
   });
+
   return (
     <form
       className="flex flex-col items-center gap-3"
@@ -43,27 +44,31 @@ const TravelListForm = (): JSX.Element => {
         value={formik.values.stayLength}
         onChange={formik.handleChange}
       />
-      <div className="flex items-center">
-        <input
-          className="input-hidden"
-          type="radio"
-          name="tentOption"
-          id="tentOption"
-        />
-        <label htmlFor="tentOption">
-          <img className="h-44 cursor-pointer" src={tentImg} alt="camping" />
-        </label>
-        <input
-          className="input-hidden"
-          type="radio"
-          name="tentOption"
-          id="hotelOption"
-        />
-        <label htmlFor="hotelOption">
-          <img className="h-44 cursor-pointer" src={hotelImg} alt="hotel" />
-        </label>
+      <div className="flex items-center gap-2">
+        <div>
+          <input
+            className="input-hidden"
+            type="radio"
+            name="tentOption"
+            id="tentOption"
+          />
+          <label htmlFor="tentOption">
+            <img className="h-28 cursor-pointer" src={tentImg} alt="camping" />
+          </label>
+        </div>
+        <div>
+          <input
+            className="input-hidden"
+            type="radio"
+            name="tentOption"
+            id="hotelOption"
+          />
+          <label htmlFor="hotelOption">
+            <img className="h-28 cursor-pointer" src={hotelImg} alt="hotel" />
+          </label>
+        </div>
       </div>
-      <div className="flex items-center gap-3 flex-wrap">
+      <div className="grid">
         {travelListsData.map((list: TravelListType) => (
           <TravelList name={list.name} items={list.items} />
         ))}

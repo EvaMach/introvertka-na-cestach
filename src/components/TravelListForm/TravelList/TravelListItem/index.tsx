@@ -33,7 +33,7 @@ const TravelList = ({ amount, clothingItem }: Props): JSX.Element => {
       </button>
       <button>
         {' '}
-        <img className="w-4 fill-red-500" src={shoppingBag}></img>
+        <img className="w-4 ml-3 fill-red-500" src={shoppingBag}></img>
       </button>
     </div>
   );
