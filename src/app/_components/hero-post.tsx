@@ -13,19 +13,19 @@ type Props = {
 export function HeroPost({ title, coverImage, date, excerpt, slug }: Props) {
   return (
     <section>
-      <div className="md:grid md:grid-cols-2 md:gap-x-16 lg:gap-x-8 mb-20 md:mb-28">
-        <div>
+      <div className="md:grid md:grid-cols-2 md:gap-x-16 lg:gap-x-8">
+        <div className="flex align-center justify-between">
           <h3 className="mb-2 text-4xl lg:text-5xl leading-tight">
             <Link href={`/posts/${slug}`} className="hover:underline">
               {title}
             </Link>
           </h3>
-          <div className="mb-2 md:mb-0 text-lg">
+          {/* <div className="mb-2 md:mb-0 text-lg">
             <DateFormatter dateString={date} />
+          </div> */}
+          <div>
+            <p className="text-lg leading-relaxed mb-4">{excerpt}</p>
           </div>
-        </div>
-        <div>
-          <p className="text-lg leading-relaxed mb-4">{excerpt}</p>
         </div>
       </div>
       <div className="mb-8 md:mb-8">
