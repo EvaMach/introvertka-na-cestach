@@ -12,25 +12,25 @@ type Props = {
 
 export function HeroPost({ title, coverImage, date, excerpt, slug }: Props) {
   return (
-    <section>
-      <div className="md:grid md:grid-cols-2 md:gap-x-16 lg:gap-x-8">
-        <div className="flex align-center justify-between">
-          <h3 className="mb-2 text-4xl lg:text-5xl leading-tight">
-            <Link href={`/posts/${slug}`} className="hover:underline">
-              {title}
-            </Link>
-          </h3>
-          {/* <div className="mb-2 md:mb-0 text-lg">
-            <DateFormatter dateString={date} />
-          </div> */}
+    <section className="w-3/4 mb-16">
+      <Link className="group" href={`/journal/${slug}`}>
+        <div className="flex justify-between">
           <div>
-            <p className="text-lg leading-relaxed mb-4">{excerpt}</p>
+            <h3 className="mb-2 text-2xl font-bold md:text-3xl group-hover:underline">
+              {title}
+            </h3>
+            <p className="text-lg text-stone-700 leading-relaxed mb-4 group-hover:underline">
+              {excerpt}
+            </p>
+          </div>
+          <div className="text-lg group-hover:underline">
+            <DateFormatter dateString={date} />
           </div>
         </div>
-      </div>
-      <div className="mb-8 md:mb-8">
-        <CoverImage title={title} src={coverImage} slug={slug} />
-      </div>
+        <div className="mb-8 md:mb-4">
+          <CoverImage title={title} src={coverImage} />
+        </div>
+      </Link>
     </section>
   );
 }

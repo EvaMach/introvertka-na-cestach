@@ -16,15 +16,17 @@ export function PostPreview({ title, coverImage, date, excerpt, slug }: Props) {
       <div className="mb-5">
         <CoverImage slug={slug} title={title} src={coverImage} />
       </div>
-      <h3 className="text-3xl mb-3 leading-snug">
-        <Link href={`/posts/${slug}`} className="hover:underline">
-          {title}
-        </Link>
-      </h3>
-      <div className="text-lg mb-4">
-        <DateFormatter dateString={date} />
+      <div className="flex justify-between items-center">
+        <h3 className="text-xl font-bold mb-3 leading-snug tracking-tighter">
+          <Link href={`/journal/${slug}`} className="hover:underline">
+            {title}
+          </Link>
+        </h3>
+        <div className="text-base">
+          <DateFormatter dateString={date} />
+        </div>
       </div>
-      <p className="text-lg leading-relaxed mb-4">{excerpt}</p>
+      <p className="text-base leading-snug mb-4 text-stone-600">{excerpt}</p>
     </div>
   );
 }

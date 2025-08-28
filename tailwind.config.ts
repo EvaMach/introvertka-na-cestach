@@ -16,12 +16,8 @@ const config: Config = {
       },
       colors: {
         background: "#FAFFFB",
-        title: "#4D633A",
-        "accent-1": "#FAFAFA",
-        "accent-2": "#EAEAEA",
-        "accent-7": "#333",
-        success: "#0070f3",
-        cyan: "#79FFE1",
+        title: "#2e3c21",
+        accent: "#D28D25",
       },
       spacing: {
         28: "7rem",

@@ -1,10 +1,11 @@
 import Footer from "@/app/_components/footer";
 import type { Metadata } from "next";
-import { Inter, Montserrat } from "next/font/google";
-import cn from "classnames";
+import { Montserrat } from "next/font/google";
 import "./globals.css";
+import { Intro } from "./_components/intro";
+import Menu from "./_components/menu";
+import Container from "./_components/container";
 
-const inter = Inter({ subsets: ["latin"] });
 const monteserrat = Montserrat({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -56,10 +57,15 @@ export default function RootLayout({
         <meta name="theme-color" content="#000" />
         <link rel="alternate" type="application/rss+xml" href="/feed.xml" />
       </head>
-      <body
-        className={cn(inter.className, "dark:bg-slate-900 dark:text-slate-400")}
-      >
-        <div className="min-h-screen">{children}</div>
+      <body className={monteserrat.className}>
+        <div className="min-h-screen">
+          <main>
+            <Container>
+              <Intro />
+              {children}
+            </Container>
+          </main>
+        </div>
         <Footer />
       </body>
     </html>

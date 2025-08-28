@@ -10,13 +10,13 @@ type Props = {
 
 const CoverImage = ({ title, src, slug }: Props) => {
   const image = (
-    <div className="w-full sm:h-[50vh] relative overflow-hidden rounded-md shadow-sm">
+    <div className="w-full sm:h-[50vh] relative overflow-hidden rounded-sm shadow-sm">
       <Image
         src={src}
         alt={`Cover Image for ${title}`}
         fill
         className={cn("object-cover", {
-          "hover:shadow-lg transition-shadow duration-200": slug,
+          "hover:shadow-xl transition-shadow duration-200": slug,
         })}
         sizes="100vw"
       />
@@ -26,7 +26,7 @@ const CoverImage = ({ title, src, slug }: Props) => {
   return (
     <div className="sm:mx-0">
       {slug ? (
-        <Link href={`/posts/${slug}`} aria-label={title}>
+        <Link href={`/journal/${slug}`} aria-label={title}>
           {image}
         </Link>
       ) : (
