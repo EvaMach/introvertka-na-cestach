@@ -37,13 +37,13 @@ export default async function Post(props: Params) {
 }
 
 type Params = {
-  params: {
+  params: Promise<{
     slug: string;
-  };
+  }>;
 };
 
 export async function generateMetadata(props: Params): Promise<Metadata> {
-  const params = props.params;
+  const params = await props.params;
   const post = getPostBySlug(params.slug);
 
   if (!post) {
