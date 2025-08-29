@@ -15,7 +15,7 @@ export function Footer() {
     <footer className="bg-title">
       <Container>
         <div className="py-4 flex text-yellow-50 flex-col lg:flex-row items-center">
-          <p className="text-sm lg:text-md font-semibold tracking-tighter leading-tight text-center lg:text-left mb-10 lg:mb-0 lg:pr-4 lg:w-1/2">
+          <p className="text-sm flex-1 lg:text-md font-semibold tracking-tighter leading-tight text-center lg:text-left mb-10 lg:mb-0 lg:pr-4 lg:w-1/2">
             ©2025 s nadšením a kafem v ruce, introvertka Eva.
           </p>
           <Link href="https://www.instagram.com/introvertkanacestach">
