@@ -12,15 +12,15 @@ type Props = {
 export function PostHeader({ title, coverImage, date, excerpt }: Props) {
   return (
     <>
-      <section className="flex gap-12">
-        <div className="max-w-60">
+      <section className="flex flex-col md:flex-row gap-6 md:gap-12">
+        <div className="md:max-w-60">
           <PostTitle>{title}</PostTitle>
-          <div className="mb-4 mt-10">
+          <div className="text-sm md:text-base mb-2 md:mb-4 mt-4 md:mt-10">
             <DateFormatter dateString={date} />
           </div>
-          <p>{excerpt}</p>
+          <p className="text-sm md:text-base">{excerpt}</p>
         </div>
-        <div className="w-3/4 mb-4 md:mb-8 sm:mx-0">
+        <div className="w-full md:w-3/4 mb-4 md:mb-8">
           <CoverImage title={title} src={coverImage} />
         </div>
       </section>

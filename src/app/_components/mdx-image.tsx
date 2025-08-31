@@ -23,7 +23,7 @@ export default function MDXImage({
 }: MDXImageProps) {
   return (
     <div className={`mb-4`}>
-      <div className="relative max-w-3xl -mx-14">
+      <div className="relative max-w-3xl lg:-mx-14">
         <Image
           src={src}
           alt={alt}

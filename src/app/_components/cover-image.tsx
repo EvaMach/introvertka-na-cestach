@@ -10,7 +10,7 @@ type Props = {
 
 const CoverImage = ({ title, src, slug }: Props) => {
   const image = (
-    <div className="w-full sm:h-[50vh] relative overflow-hidden rounded-sm shadow-sm">
+    <div className="w-full h-[50vh] relative overflow-hidden rounded-sm shadow-sm">
       <Image
         src={src}
         alt={`Cover Image for ${title}`}

@@ -15,10 +15,10 @@ function VerticalImageLayout({
   imageProps,
 }: VerticalImageLayoutProps) {
   return (
-    <div className="flex flex-row gap-28 items-center -mx-24 mb-4">
+    <div className="flex flex-col lg:flex-row lg:gap-28 items-center lg:-mx-24 mb-4">
       <div className="flex-1 max-w-2xl">{children}</div>
       <div
-        className={`flex-shrink-0 w-1/3 max-w-xs ${
+        className={`flex-shrink-0 md:w-1/3 max-w-xs ${
           imageProps.position === "left" ? "order-first" : ""
         }`}
       >
@@ -53,7 +53,7 @@ export function PostBody({ content }: Props) {
             </h3>
           ),
           p: ({ children, ...props }) => (
-            <p className="mb-4 leading-relaxed" {...props}>
+            <p className="text-sm md:text-base mb-4 leading-relaxed" {...props}>
               {children}
             </p>
           ),
