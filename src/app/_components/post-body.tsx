@@ -57,6 +57,16 @@ export function PostBody({ content }: Props) {
               {children}
             </p>
           ),
+          a: ({ children, href, ...props }) => (
+            <a
+              className="text-accent underline hover:text-accent-dark"
+              href={href}
+              {...props}
+            >
+              {" "}
+              {children}
+            </a>
+          ),
           ul: ({ children, ...props }) => (
             <ul className="mb-4 list-disc list-inside space-y-1" {...props}>
               {children}
