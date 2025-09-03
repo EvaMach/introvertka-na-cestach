@@ -18,7 +18,10 @@ export function PostPreview({ title, coverImage, date, excerpt, slug }: Props) {
       </div>
       <div className="flex justify-between items-center">
         <h3 className="text-base md:text-xl font-bold mb-3 leading-snug tracking-tighter">
-          <Link href={`/journal/${slug}`} className="hover:underline">
+          <Link
+            href={`/journal/${slug}`}
+            className="hover:underline decoration-accent underline-offset-4"
+          >
             {title}
           </Link>
         </h3>

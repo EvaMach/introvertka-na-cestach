@@ -15,9 +15,10 @@ const config: Config = {
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
       colors: {
-        background: "#FAFFFB",
+        background: "#fcfdf7",
         title: "#2e3c21",
         accent: "#D28D25",
+        accentBg: "#f1e2c6",
       },
       spacing: {
         28: "7rem",

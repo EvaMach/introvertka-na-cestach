@@ -5,7 +5,7 @@ import { usePathname } from "next/navigation";
 
 const links = [
   { href: "/journal", label: "Příběhy" },
-  { href: "/guides", label: "Průvodci" },
+  // { href: "/guides", label: "Průvodci" },
 ];
 
 export default function Menu() {
