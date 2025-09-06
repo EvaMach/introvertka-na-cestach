@@ -22,7 +22,7 @@ function FloatingButton() {
 
   return (
     <button
-      className="fixed rounded-lg bottom-4 md:bottom-16 right-1 md:right-8 padding-12 w-8 h-8 bg-accentBg border-none shadow-sm cursor-pointer text-lg"
+      className="fixed rounded-lg bottom-8 md:bottom-16 right-1 md:right-8 padding-12 w-8 h-8 bg-accentBg border-none shadow-sm cursor-pointer text-lg"
       onClick={handleClick}
       aria-label="Scroll to top"
     >

@@ -12,12 +12,9 @@ type Props = {
 
 export function HeroPost({ title, coverImage, date, excerpt, slug }: Props) {
   return (
-    <section className="w-full bg-accentBg pt-6 px-6 pb-8 rounded-sm md:w-4/5 mb-12 md:mb-16">
+    <section className="w-full bg-accentBg p-6 md:pb-8 rounded-sm md:w-4/5 mb-12 md:mb-16">
       <Link className="group" href={`/journal/${slug}`}>
-        <div className="mb-8 md:mb-4">
-          <CoverImage title={title} src={coverImage} />
-        </div>
-        <div className="flex justify-between">
+        <div className="flex justify-between items-baseline">
           <h3 className="mb-2 text-xl text-stone-900 tracking-tight font-bold md:text-3xl group-hover:underline">
             {title}
           </h3>
@@ -28,6 +25,9 @@ export function HeroPost({ title, coverImage, date, excerpt, slug }: Props) {
         <p className="text-base md:text-lg text-stone-800 leading-relaxed mb-4 group-hover:underline">
           {excerpt}
         </p>
+        <div className="mb-8 md:mb-4">
+          <CoverImage title={title} src={coverImage} />
+        </div>
       </Link>
     </section>
   );

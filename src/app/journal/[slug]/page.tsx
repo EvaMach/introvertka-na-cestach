@@ -19,18 +19,16 @@ export default async function Post(props: Params) {
 
   return (
     <main>
-      <Container>
-        <Header />
-        <article className="mb-32">
-          <PostHeader
-            title={post.title}
-            excerpt={post.excerpt}
-            coverImage={post.coverImage}
-            date={post.date}
-          />
-          <PostBody content={content} />
-        </article>
-      </Container>
+      <Header />
+      <article className="mb-32">
+        <PostHeader
+          title={post.title}
+          excerpt={post.excerpt}
+          coverImage={post.coverImage}
+          date={post.date}
+        />
+        <PostBody content={content} />
+      </article>
     </main>
   );
 }
