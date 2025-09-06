@@ -4,7 +4,7 @@ export function Intro() {
   return (
     <section className="flex-col md:flex-row w-full flex items-end md:justify-between mt-4 md:mt-8 border-b border-black pb-4 md:pb-8 mb-4">
       <Link href="/">
-        <h1 className="text-5xl max-w-[30rem] md:text-7xl text-title font-extrabold tracking-[-0.15rem] md:tracking-[-0.3rem] leading-tight md:leading-[4rem] md:pr-8">
+        <h1 className="text-5xl max-w-[30rem] md:text-7xl text-title font-extrabold tracking-[-0.15rem] md:tracking-[-0.2rem] leading-tight md:leading-[4rem] md:pr-8">
           Introvertka na cestách
         </h1>
       </Link>
