@@ -8,7 +8,7 @@ export function Intro() {
           Introvertka na cestách
         </h1>
       </Link>
-      <h4 className="text-right text-stone-800 font-light md:text-right text-base md:text-lg mt-3 md:mt-5 md:pl-8">
+      <h4 className="text-right text-stone-800 font-light md:text-right text-lg md:text-xl mt-3 md:mt-5 md:pl-8">
         O tichém cestování bez příkras a s respektem k přírodě.
       </h4>
     </section>

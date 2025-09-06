@@ -48,12 +48,15 @@ export function PostBody({ content }: Props) {
             </h2>
           ),
           h3: ({ children, ...props }) => (
-            <h3 className="text-xl font-semibold mb-3 mt-5" {...props}>
+            <h3
+              className="text-xl md:text2xl font-semibold mb-3 mt-5"
+              {...props}
+            >
               {children}
             </h3>
           ),
           p: ({ children, ...props }) => (
-            <p className="text-sm md:text-base mb-4 leading-relaxed" {...props}>
+            <p className="text-base md:text-lg mb-4 leading-relaxed" {...props}>
               {children}
             </p>
           ),
