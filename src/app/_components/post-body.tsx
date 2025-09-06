@@ -1,5 +1,6 @@
 import { MDXRemote } from "next-mdx-remote/rsc";
 import MDXImage from "./mdx-image";
+import FloatingButton from "./floating-button";
 
 interface Props {
   content: string;
@@ -95,6 +96,7 @@ export function PostBody({ content }: Props) {
           ),
         }}
       />
+      <FloatingButton />
     </div>
   );
 }
