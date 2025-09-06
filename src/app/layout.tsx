@@ -3,7 +3,6 @@ import type { Metadata } from "next";
 import { Montserrat } from "next/font/google";
 import "./globals.css";
 import { Intro } from "./_components/intro";
-import Menu from "./_components/menu";
 import Container from "./_components/container";
 
 const monteserrat = Montserrat({ subsets: ["latin"] });
@@ -11,10 +10,17 @@ const monteserrat = Montserrat({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: `Introvertka na cestách`,
   description: `O tichém cestování bez příkras a s respektem k přírodě.`,
-  // TODO
-  // openGraph: {
-  //   images: [HOME_OG_IMAGE_URL],
-  // },
+  robots: {
+    index: true,
+    follow: true,
+  },
+  openGraph: {
+    type: "website",
+    url: "https://introvertkanacestach.cz/",
+    siteName: "Introvertka na cestách",
+    title: "Introvertka na cestách",
+    description: "O tichém cestování bez příkras a s respektem k přírodě.",
+  },
 };
 
 export default function RootLayout({
