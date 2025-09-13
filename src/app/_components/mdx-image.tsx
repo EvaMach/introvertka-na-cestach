@@ -1,5 +1,8 @@
+"use client";
+
+import { useImageModal } from "@/hooks/useImageModal";
 import Image from "next/image";
-import { ReactNode } from "react";
+import { ReactNode, useState } from "react";
 
 interface MDXImageProps {
   type?: "horizontal" | "vertical";
@@ -20,6 +23,8 @@ export default function MDXImage({
   className = "object-bottom",
   children,
 }: MDXImageProps) {
+  const { openModal, Modal } = useImageModal();
+
   return (
     <div className={`mb-4`}>
       <div className="relative max-w-4xl -mx-8">
@@ -32,6 +37,7 @@ export default function MDXImage({
             type === "horizontal" ? "max-h-96" : ""
           } ${className}`}
           priority={false}
+          onClick={() => openModal(src, alt, width, height, type)}
         />
         {children && (
           <div className="mt-2 text-center text-sm text-gray-600 italic">
@@ -39,6 +45,8 @@ export default function MDXImage({
           </div>
         )}
       </div>
+
+      {Modal}
     </div>
   );
 }
