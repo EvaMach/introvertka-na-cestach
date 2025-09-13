@@ -1,6 +1,7 @@
 import { MDXRemote } from "next-mdx-remote/rsc";
 import MDXImage from "./mdx-image";
 import FloatingButton from "./floating-button";
+import DoubleImage from "./double-image";
 
 interface Props {
   content: string;
@@ -31,11 +32,12 @@ function VerticalImageLayout({
 
 export function PostBody({ content }: Props) {
   return (
-    <div className="max-w-2xl mx-auto text-justify first-letter:text-3xl first-letter:font-semibold first-letter:text-accent">
+    <div className="max-w-3xl mx-auto text-justify first-letter:text-3xl first-letter:font-semibold first-letter:text-accent">
       <MDXRemote
         source={content}
         components={{
           MDXImage: MDXImage,
+          DoubleImage: DoubleImage,
           img: MDXImage,
           VerticalImageLayout,
           h1: ({ children, ...props }) => (

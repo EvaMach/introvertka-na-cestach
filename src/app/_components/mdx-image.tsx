@@ -2,8 +2,7 @@ import Image from "next/image";
 import { ReactNode } from "react";
 
 interface MDXImageProps {
-  type: "horizontal" | "vertical";
-  position: "left" | "right";
+  type?: "horizontal" | "vertical";
   src: string;
   alt: string;
   width?: number;
@@ -23,13 +22,13 @@ export default function MDXImage({
 }: MDXImageProps) {
   return (
     <div className={`mb-4`}>
-      <div className="relative max-w-3xl lg:-mx-14">
+      <div className="relative max-w-4xl -mx-8">
         <Image
           src={src}
           alt={alt}
           width={width}
           height={height}
-          className={`rounded object-cover max-h-96 shadow-lg ${
+          className={`w-full rounded object-cover max-h-96 shadow-lg ${
             type === "horizontal" ? "max-h-96" : ""
           } ${className}`}
           priority={false}
