@@ -47,13 +47,17 @@ export async function generateMetadata(props: Params): Promise<Metadata> {
     return notFound();
   }
 
-  const title = `${post.title}`;
-
   return {
-    title,
+    title: `${post.title} | Introvertka na cestách`,
+    description: post.excerpt,
+    alternates: {
+      canonical: `https://introvertkanacestach.cz/journal/${params.slug}`,
+    },
     openGraph: {
-      title,
+      title: post.title,
+      description: post.excerpt,
       images: [post.ogImage.url],
+      type: "article",
     },
   };
 }
