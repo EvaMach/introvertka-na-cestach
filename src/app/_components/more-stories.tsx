@@ -11,7 +11,7 @@ export function MoreStories({ posts }: Props) {
       <h2 className="mb-4 text-xl md:text-3xl font-bold tracking-tighter leading-tight">
         Další příběhy
       </h2>
-      <div className="grid grid-cols-1 md:grid-cols-2 md:gap-x-16 lg:gap-x-32 gap-y-20 md:gap-y-32 mb-16 md:mb-32">
+      <div className="grid grid-cols-1 md:grid-cols-2 md:gap-x-16 lg:gap-x-32 gap-y-4 md:gap-y-8 mb-16 md:mb-32">
         {posts.map((post) => (
           <PostPreview
             key={post.slug}

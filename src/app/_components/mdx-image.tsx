@@ -18,7 +18,7 @@ export default function MDXImage({
   type = "horizontal",
   src,
   alt,
-  width = 800,
+  width = 1200,
   height = 600,
   className = "object-bottom",
   children,
@@ -26,26 +26,23 @@ export default function MDXImage({
   const { openModal, Modal } = useImageModal();
 
   return (
-    <div className={`mb-4`}>
-      <div className="relative max-w-4xl -mx-8">
-        <Image
-          src={src}
-          alt={alt}
-          width={width}
-          height={height}
-          className={`w-full rounded object-cover max-h-96 shadow-lg ${
-            type === "horizontal" ? "max-h-96" : ""
-          } ${className}`}
-          priority={false}
-          onClick={() => openModal(src, alt, width, height, type)}
-        />
-        {children && (
-          <div className="mt-2 text-center text-sm text-gray-600 italic">
-            {children}
-          </div>
-        )}
-      </div>
-
+    <div className="mb-4 flex flex-col items-center">
+      <Image
+        src={src}
+        alt={alt}
+        width={width}
+        height={height}
+        className={`w-full rounded object-cover max-w-[600] shadow-lg ${
+          type === "horizontal" ? "max-h-96" : ""
+        } ${className}`}
+        priority={false}
+        onClick={() => openModal(src, alt, width, height, type)}
+      />
+      {children && (
+        <div className="mt-2 text-center text-sm text-gray-600 italic">
+          {children}
+        </div>
+      )}
       {Modal}
     </div>
   );
