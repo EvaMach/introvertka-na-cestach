@@ -44,7 +44,7 @@ export default function DoubleImage({
           }
         />
       </div>
-      <div className="mt-2 text-center text-sm text-gray-600 italic">
+      <div className="mt-2 mb-4 text-center text-sm text-gray-600 italic">
         {caption}
       </div>
       {Modal}
