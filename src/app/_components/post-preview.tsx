@@ -1,6 +1,7 @@
 import Link from "next/link";
 import CoverImage from "./cover-image";
 import DateFormatter from "./date-formatter";
+import { Title } from "./title";
 
 type Props = {
   title: string;
@@ -17,14 +18,14 @@ export function PostPreview({ title, coverImage, date, excerpt, slug }: Props) {
         <CoverImage slug={slug} title={title} src={coverImage} />
       </div>
       <div className="flex justify-between items-center">
-        <h3 className="text-base md:text-xl font-bold mb-3 leading-snug tracking-tighter">
+        <Title size="h3">
           <Link
             href={`/journal/${slug}`}
             className="hover:underline decoration-accent underline-offset-4"
           >
             {title}
           </Link>
-        </h3>
+        </Title>
         <div className="text-base md:text-lg">
           <DateFormatter dateString={date} />
         </div>

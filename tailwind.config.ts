@@ -18,7 +18,7 @@ const config: Config = {
         background: "#fcfdf7",
         title: "#2e3c21",
         accent: "#D28D25",
-        accentBg: "#f1e2c6",
+        accentBg: "#f0e7d7",
       },
       spacing: {
         28: "7rem",

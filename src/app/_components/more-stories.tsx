@@ -1,5 +1,6 @@
 import { Post } from "@/lib/api";
 import { PostPreview } from "./post-preview";
+import { Title } from "./title";
 
 type Props = {
   posts: Post[];
@@ -8,9 +9,9 @@ type Props = {
 export function MoreStories({ posts }: Props) {
   return (
     <section>
-      <h2 className="mb-4 text-xl md:text-3xl font-bold tracking-tighter leading-tight">
+      <Title size="h2" className="mb-4">
         Další příběhy
-      </h2>
+      </Title>
       <div className="grid grid-cols-1 md:grid-cols-2 md:gap-x-16 lg:gap-x-32 gap-y-4 md:gap-y-8 mb-16 md:mb-32">
         {posts.map((post) => (
           <PostPreview
