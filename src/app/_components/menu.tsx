@@ -4,8 +4,8 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 
 const links = [
+  { href: "/guides", label: "Průvodci" },
   { href: "/journal", label: "Příběhy" },
-  // { href: "/guides", label: "Průvodci" },
 ];
 
 export default function Menu() {
@@ -16,7 +16,7 @@ export default function Menu() {
       <div className="max-w-5xl flex gap-8 mb-6 md:mb-12">
         {links.map(({ href, label }) => {
           const isActive =
-            pathname === href || (href === "/journal" && pathname === "/");
+            pathname === href || (href === "/guides" && pathname === "/");
           return (
             <Link
               key={href}

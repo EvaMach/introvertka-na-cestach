@@ -8,13 +8,13 @@ type Props = {
   coverImage: string;
   date: string;
   excerpt: string;
-  slug: string;
+  path: string;
 };
 
-export function HeroPost({ title, coverImage, date, excerpt, slug }: Props) {
+export function HeroPost({ title, coverImage, date, excerpt, path }: Props) {
   return (
     <section className="w-full bg-accentBg p-6 md:pb-8 rounded-sm md:w-4/5 mb-12 md:mb-16">
-      <Link className="group" href={`/journal/${slug}`}>
+      <Link className="group" href={path}>
         <div className="flex justify-between items-baseline">
           <Title size="h2" className="group-hover:underline">
             {title}

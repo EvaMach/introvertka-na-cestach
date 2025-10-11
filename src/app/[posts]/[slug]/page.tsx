@@ -1,15 +1,20 @@
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { getAllPosts, getPostBySlug } from "@/lib/api";
-import Container from "@/app/_components/container";
+import { getPosts, getPostByPath } from "@/lib/api";
 import Header from "@/app/_components/header";
 import { PostBody } from "@/app/_components/post-body";
 import { PostHeader } from "@/app/_components/post-header";
 
+interface Params {
+  params: Promise<{
+    posts: string;
+    slug: string;
+  }>;
+}
+
 export default async function Post(props: Params) {
-  const params = await props.params;
-  console.log(params, "params");
-  const post = getPostBySlug(params.slug);
+  const { posts, slug } = await props.params;
+  const post = getPostByPath(`${posts}/${slug}`);
 
   if (!post) {
     return notFound();
@@ -33,15 +38,9 @@ export default async function Post(props: Params) {
   );
 }
 
-type Params = {
-  params: Promise<{
-    slug: string;
-  }>;
-};
-
 export async function generateMetadata(props: Params): Promise<Metadata> {
-  const params = await props.params;
-  const post = getPostBySlug(params.slug);
+  const { posts, slug } = await props.params;
+  const post = getPostByPath(`${posts}/${slug}`);
 
   if (!post) {
     return notFound();
@@ -51,7 +50,7 @@ export async function generateMetadata(props: Params): Promise<Metadata> {
     title: `${post.title} | Introvertka na cestách`,
     description: post.excerpt,
     alternates: {
-      canonical: `https://introvertkanacestach.cz/journal/${params.slug}`,
+      canonical: `https://introvertkanacestach.cz/${posts}/${slug}`,
     },
     openGraph: {
       title: post.title,
@@ -63,9 +62,13 @@ export async function generateMetadata(props: Params): Promise<Metadata> {
 }
 
 export async function generateStaticParams() {
-  const posts = getAllPosts("journal");
+  const posts = getPosts("all");
 
-  return posts.map((post) => ({
-    slug: post.slug,
-  }));
+  return posts.map((post) => {
+    const [category, slug] = post.path.split("/");
+    return {
+      posts: category,
+      slug: slug,
+    };
+  });
 }

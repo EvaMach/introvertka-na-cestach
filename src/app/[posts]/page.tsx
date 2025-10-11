@@ -1,10 +1,16 @@
 import { HeroPost } from "@/app/_components/hero-post";
 import { MoreStories } from "@/app/_components/more-stories";
-import { getAllPosts } from "@/lib/api";
-import Menu from "../_components/menu";
+import { getPosts } from "@/lib/api";
 
-export default function Index() {
-  const allPosts = getAllPosts("journal");
+interface Params {
+  params: Promise<{
+    posts: string;
+  }>;
+}
+
+export default async function Index(params: Params) {
+  const { posts } = await params.params;
+  const allPosts = getPosts(posts);
 
   const heroPost = allPosts[0];
 
@@ -12,12 +18,11 @@ export default function Index() {
 
   return (
     <div>
-      <Menu />
       <HeroPost
         title={heroPost.title}
         coverImage={heroPost.coverImage}
         date={heroPost.date}
-        slug={heroPost.slug}
+        path={heroPost.path}
         excerpt={heroPost.excerpt}
       />
       {morePosts.length > 0 && <MoreStories posts={morePosts} />}
