@@ -68,7 +68,7 @@ export async function generateStaticParams() {
     const [category, slug] = post.path.split("/");
     return {
       posts: category,
-      slug: slug,
+      slug: slug.split(".")[0],
     };
   });
 }

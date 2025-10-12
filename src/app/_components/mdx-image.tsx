@@ -2,7 +2,7 @@
 
 import { useImageModal } from "@/hooks/useImageModal";
 import Image from "next/image";
-import { ReactNode, useState } from "react";
+import { ReactNode } from "react";
 
 interface MDXImageProps {
   type?: "horizontal" | "vertical";

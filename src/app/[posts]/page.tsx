@@ -1,6 +1,7 @@
 import { HeroPost } from "@/app/_components/hero-post";
 import { MoreStories } from "@/app/_components/more-stories";
 import { getPosts } from "@/lib/api";
+import Menu from "../_components/menu";
 
 interface Params {
   params: Promise<{
@@ -18,6 +19,7 @@ export default async function Index(params: Params) {
 
   return (
     <div>
+      <Menu />
       <HeroPost
         title={heroPost.title}
         coverImage={heroPost.coverImage}

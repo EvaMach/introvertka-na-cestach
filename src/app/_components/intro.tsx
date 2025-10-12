@@ -5,7 +5,7 @@ const playfairDisplay = Playfair_Display({
   subsets: ["latin"],
 });
 
-export function Intro() {
+export default function Intro() {
   return (
     <section className="flex-col md:flex-row w-full flex items-end md:justify-between mt-4 md:mt-8 border-b border-black pb-4 md:pb-8 mb-4">
       <Link href="/">

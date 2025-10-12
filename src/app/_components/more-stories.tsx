@@ -15,11 +15,11 @@ export function MoreStories({ posts }: Props) {
       <div className="grid grid-cols-1 md:grid-cols-2 md:gap-x-16 lg:gap-x-32 gap-y-4 md:gap-y-8 mb-16 md:mb-32">
         {posts.map((post) => (
           <PostPreview
-            key={post.slug}
+            key={post.path}
             title={post.title}
             coverImage={post.coverImage}
             date={post.date}
-            slug={post.slug}
+            path={post.path}
             excerpt={post.excerpt}
           />
         ))}

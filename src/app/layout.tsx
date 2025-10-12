@@ -2,7 +2,7 @@ import Footer from "@/app/_components/footer";
 import type { Metadata } from "next";
 import { Montserrat } from "next/font/google";
 import "./globals.css";
-import { Intro } from "./_components/intro";
+import Intro from "./_components/intro";
 import Container from "./_components/container";
 import Menu from "./_components/menu";
 
@@ -51,7 +51,6 @@ export default function RootLayout({
           <main>
             <Container>
               <Intro />
-              <Menu />
               {children}
             </Container>
           </main>

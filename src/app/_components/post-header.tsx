@@ -13,7 +13,7 @@ export function PostHeader({ title, coverImage, date, excerpt }: Props) {
   return (
     <>
       <section className="flex flex-col md:flex-row gap-6 md:gap-12">
-        <div className="md:max-w-60">
+        <div className="md:max-w-96">
           <PostTitle>{title}</PostTitle>
           <div className="text-base md:text-lg mb-2 md:mb-4 mt-4 md:mt-10">
             <DateFormatter dateString={date} />

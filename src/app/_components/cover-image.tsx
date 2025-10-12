@@ -5,10 +5,10 @@ import Image from "next/image";
 type Props = {
   title: string;
   src: string;
-  slug?: string;
+  path?: string;
 };
 
-const CoverImage = ({ title, src, slug }: Props) => {
+const CoverImage = ({ title, src, path }: Props) => {
   const image = (
     <div className="w-full h-[50vh] relative overflow-hidden rounded-md">
       <Image
@@ -16,7 +16,7 @@ const CoverImage = ({ title, src, slug }: Props) => {
         alt={`Cover Image for ${title}`}
         fill
         className={cn("object-cover", {
-          "hover:shadow-xl transition-shadow duration-200": slug,
+          "hover:shadow-xl transition-shadow duration-200": path,
         })}
         sizes="100vw"
       />
@@ -25,8 +25,8 @@ const CoverImage = ({ title, src, slug }: Props) => {
 
   return (
     <div className="sm:mx-0">
-      {slug ? (
-        <Link href={`/journal/${slug}`} aria-label={title}>
+      {path ? (
+        <Link href={path} aria-label={title}>
           {image}
         </Link>
       ) : (

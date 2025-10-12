@@ -2,6 +2,8 @@ import { MDXRemote } from "next-mdx-remote/rsc";
 import MDXImage from "./mdx-image";
 import FloatingButton from "./floating-button";
 import DoubleImage from "./double-image";
+import TrailOverview from "./trail-info-list";
+import TrailSectionDetails from "./trail-section-details";
 
 interface Props {
   content: string;
@@ -38,6 +40,8 @@ export function PostBody({ content }: Props) {
         components={{
           MDXImage: MDXImage,
           DoubleImage: DoubleImage,
+          TrailOverview: TrailOverview,
+          TrailSectionDetails: TrailSectionDetails,
           img: MDXImage,
           VerticalImageLayout,
           h1: ({ children, ...props }) => (
