@@ -30,6 +30,7 @@ export default function MDXImage({
       <Image
         src={src}
         alt={alt}
+        title={alt}
         width={width}
         height={height}
         className={`w-full rounded object-cover max-w-[600] shadow-lg ${

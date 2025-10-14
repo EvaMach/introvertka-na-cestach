@@ -14,6 +14,7 @@ const CoverImage = ({ title, src, path }: Props) => {
       <Image
         src={src}
         alt={`Cover Image for ${title}`}
+        title={title}
         fill
         loading="lazy"
         className={cn("object-cover", {

@@ -30,6 +30,7 @@ export function useImageModal() {
       <Image
         src={modal.src}
         alt={modal.alt}
+        title={modal.alt}
         width={modal.width * 1.2}
         height={modal.height * 1.2}
         loading="eager"

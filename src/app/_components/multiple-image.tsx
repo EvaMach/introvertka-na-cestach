@@ -23,6 +23,7 @@ export default function MultipleImage({
           <Image
             key={index}
             alt={imageAlts[index]}
+            title={imageAlts[index]}
             width={800}
             height={600}
             src={src}
