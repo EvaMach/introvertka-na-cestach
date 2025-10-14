@@ -7,6 +7,10 @@ import TrailSectionDetails from "./trail-section-details";
 import { GearList } from "./gear-list";
 import Iframe from "./iframe";
 import VerticalImageLayout from "./vertical-image-layout";
+import HeadingUnderline from "./heading-underline";
+import TableOfContents from "./table-of-contents";
+import { generateId } from "@/lib/utils";
+import Checklist from "./checklist";
 
 interface Props {
   content: string;
@@ -22,27 +26,38 @@ export function PostBody({ content }: Props) {
           MultipleImage: MultipleImage,
           TrailOverview: TrailOverview,
           TrailSectionDetails: TrailSectionDetails,
+          TableOfContents: TableOfContents,
           img: MDXImage,
           Iframe: Iframe,
           VerticalImageLayout: VerticalImageLayout,
           GearList: GearList,
+          Checklist: Checklist,
           h1: ({ children, ...props }) => (
-            <h1 className="text-3xl font-bold mb-6 mt-8" {...props}>
-              {children}
-            </h1>
+            <div className="w-fit mb-4 mt-8">
+              <h1 className="text-3xl font-bold" {...props}>
+                {children}
+              </h1>
+              <HeadingUnderline />
+            </div>
           ),
-          h2: ({ children, ...props }) => (
-            <h2 className="text-2xl font-semibold mb-4 mt-6" {...props}>
-              {children}
-            </h2>
-          ),
+          h2: ({ children, ...props }) => {
+            const id = generateId(String(children));
+            return (
+              <div className="w-fit mb-3 mt-6">
+                <h2 id={id} className="text-2xl font-semibold" {...props}>
+                  {children}
+                </h2>
+                <HeadingUnderline />
+              </div>
+            );
+          },
           h3: ({ children, ...props }) => (
-            <h3
-              className="text-xl md:text2xl font-semibold mb-3 mt-5"
-              {...props}
-            >
-              {children}
-            </h3>
+            <div className="w-fit mb-2 mt-5">
+              <h3 className="text-xl md:text2xl font-semibold" {...props}>
+                {children}
+              </h3>
+              <HeadingUnderline />
+            </div>
           ),
           p: ({ children, ...props }) => (
             <p className="text-base md:text-lg mb-4 leading-relaxed" {...props}>

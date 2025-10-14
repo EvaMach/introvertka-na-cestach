@@ -1,3 +1,4 @@
+import TableOfContents from "./table-of-contents";
 import { renderDistance } from "./trail-section-details";
 
 interface Overview {
@@ -28,7 +29,7 @@ const localizationMap: { [key: string]: string } = {
 
 export default function TrailOverview({ overview }: TrailInfoListProps) {
   return (
-    <div className="bg-accentBg rounded-sm p-6 shadow mb-12">
+    <div className="bg-accentBg/70 rounded-sm p-6 shadow mb-8">
       <div className="grid gap-4">
         {Object.entries(overview).map(([key, value], index) => (
           <div

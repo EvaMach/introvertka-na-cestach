@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Checklist from "./checklist";
 
 interface GearListProps {
   packing?: string[];
@@ -55,34 +56,7 @@ export function GearList(props: GearListProps) {
               <h3 className="text-lg font-semibold mb-4 text-stone-800 ">
                 {categoryTitles[category]}
               </h3>
-              <ul className="space-y-2">
-                {items.map((item, index) => {
-                  const itemKey = `${category}-${index}`;
-                  return (
-                    <li key={itemKey} className="flex items-start gap-2">
-                      <input
-                        type="checkbox"
-                        id={itemKey}
-                        checked={!!checkedItems[itemKey]}
-                        onChange={() => toggleItem(itemKey)}
-                        className={`mt-1 w-4 h-4 cursor-pointer ${
-                          checkedItems[itemKey] ? "accent-accent" : ""
-                        }`}
-                      />
-                      <label
-                        htmlFor={itemKey}
-                        className={`flex-1 text-sm cursor-pointer select-none ${
-                          checkedItems[itemKey]
-                            ? "line-through text-stone-500 "
-                            : "text-stone-700 "
-                        }`}
-                      >
-                        {item}
-                      </label>
-                    </li>
-                  );
-                })}
-              </ul>
+              <Checklist items={items} />
             </div>
           );
         })}
