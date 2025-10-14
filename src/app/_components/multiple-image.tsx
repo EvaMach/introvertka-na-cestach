@@ -26,6 +26,7 @@ export default function MultipleImage({
             width={800}
             height={600}
             src={src}
+            loading="lazy"
             className={`w-full rounded object-cover max-h-96 shadow-lg ${
               imageSrcs.length > 2 ? "max-w-[400]" : "max-w-[600]"
             }`}

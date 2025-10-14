@@ -32,6 +32,7 @@ export function useImageModal() {
         alt={modal.alt}
         width={modal.width * 1.2}
         height={modal.height * 1.2}
+        loading="eager"
         className={`rounded-md shadow-2xl ${
           modal.type === "vertical" ? "max-h-[90vh] w-auto" : "w-auto h-auto"
         }`}

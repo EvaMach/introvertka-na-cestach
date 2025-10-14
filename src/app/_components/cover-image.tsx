@@ -15,6 +15,7 @@ const CoverImage = ({ title, src, path }: Props) => {
         src={src}
         alt={`Cover Image for ${title}`}
         fill
+        loading="lazy"
         className={cn("object-cover", {
           "hover:shadow-xl transition-shadow duration-200": path,
         })}

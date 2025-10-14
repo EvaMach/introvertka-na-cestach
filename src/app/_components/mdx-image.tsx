@@ -35,6 +35,7 @@ export default function MDXImage({
         className={`w-full rounded object-cover max-w-[600] shadow-lg ${
           type === "horizontal" ? "max-h-96" : ""
         } ${className}`}
+        loading="lazy"
         priority={false}
         onClick={() => openModal(src, alt, width, height, type)}
       />
