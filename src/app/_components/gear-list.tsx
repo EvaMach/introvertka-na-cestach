@@ -43,16 +43,16 @@ export function GearList(props: GearListProps) {
   }
 
   return (
-    <div className="w-full overflow-x-auto pb-4 mt-8">
+    <div className="w-[95vw] lg:-mx-36 xl:-mx-56 overflow-x-scroll pb-4 mt-8">
       <div className="flex gap-6 min-w-min">
         {categories.map((category) => {
           const items = props[category] || [];
           return (
             <div
               key={category}
-              className="flex-shrink-0 w-64 bg-white dark:bg-gray-800 rounded-lg shadow-md p-4 border border-gray-200 dark:border-gray-700 max-h-60 overflow-y-auto"
+              className="flex-shrink-0 w-64 bg-accentBg/60 rounded-lg shadow p-4 max-h-60 overflow-y-auto"
             >
-              <h3 className="text-lg font-semibold mb-4 text-gray-900 dark:text-gray-100">
+              <h3 className="text-lg font-semibold mb-4 text-stone-800 ">
                 {categoryTitles[category]}
               </h3>
               <ul className="space-y-2">
@@ -73,8 +73,8 @@ export function GearList(props: GearListProps) {
                         htmlFor={itemKey}
                         className={`flex-1 text-sm cursor-pointer select-none ${
                           checkedItems[itemKey]
-                            ? "line-through text-gray-500 dark:text-gray-500"
-                            : "text-gray-700 dark:text-gray-300"
+                            ? "line-through text-stone-500 "
+                            : "text-stone-700 "
                         }`}
                       >
                         {item}

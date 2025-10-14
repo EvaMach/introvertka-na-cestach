@@ -24,16 +24,16 @@ const getPostsPaths = (postsType: PostsType) => {
     return subDirectories.flatMap((subDir) =>
       fs
         .readdirSync(join(postsDirectory, subDir))
-        .map((file) => `${subDir}/${file}`)
+        .map((file) => `${subDir}/${file}`.replace(/\.mdx$/, ""))
     );
   }
   return fs
     .readdirSync(join(postsDirectory, postsType))
-    .map((file) => `${postsType}/${file}`);
+    .map((file) => `${postsType}/${file}`.replace(/\.mdx$/, ""));
 };
 
 export const getPostByPath = (path: string): Post => {
-  const fullPath = join(postsDirectory, `${path}`);
+  const fullPath = join(postsDirectory, `${path}.mdx`);
   const fileContents = fs.readFileSync(fullPath, "utf8");
   const { data, content } = matter(fileContents);
   return { ...data, path, content } as Post;
