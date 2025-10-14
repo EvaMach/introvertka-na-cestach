@@ -28,14 +28,14 @@ const localizationMap: { [key: string]: string } = {
 
 export default function TrailOverview({ overview }: TrailInfoListProps) {
   return (
-    <div className="bg-accentBg rounded-lg p-6 my-8 shadow-sm">
+    <div className="bg-accentBg rounded-sm p-6 shadow mb-12">
       <div className="grid gap-4">
         {Object.entries(overview).map(([key, value], index) => (
           <div
             key={index}
             className="flex flex-col sm:flex-row sm:items-center gap-2"
           >
-            <dt className="font-semibold text-title min-w-32 text-sm sm:text-base">
+            <dt className="font-semibold text-stone-800 min-w-32 text-sm sm:text-base">
               {localizationMap[key]}:
             </dt>
             <dd className="text-stone-800 text-sm sm:text-base flex-1">

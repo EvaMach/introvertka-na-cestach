@@ -1,35 +1,15 @@
 import { MDXRemote } from "next-mdx-remote/rsc";
 import MDXImage from "./mdx-image";
 import FloatingButton from "./floating-button";
-import DoubleImage from "./double-image";
-import TrailOverview from "./trail-info-list";
+import MultipleImage from "./multiple-image";
+import TrailOverview from "./trail-overview";
 import TrailSectionDetails from "./trail-section-details";
+import { GearList } from "./gear-list";
+import Iframe from "./iframe";
+import VerticalImageLayout from "./vertical-image-layout";
 
 interface Props {
   content: string;
-}
-
-interface VerticalImageLayoutProps {
-  children: React.ReactNode;
-  imageProps: any;
-}
-
-function VerticalImageLayout({
-  children,
-  imageProps,
-}: VerticalImageLayoutProps) {
-  return (
-    <div className="flex flex-col lg:flex-row lg:gap-28 items-center lg:-mx-24 mb-4">
-      <div className="flex-1 max-w-2xl">{children}</div>
-      <div
-        className={`flex-shrink-0 md:w-1/3 max-w-xs ${
-          imageProps.position === "left" ? "order-first" : ""
-        }`}
-      >
-        <MDXImage type="vertical" {...imageProps} />
-      </div>
-    </div>
-  );
 }
 
 export function PostBody({ content }: Props) {
@@ -39,11 +19,13 @@ export function PostBody({ content }: Props) {
         source={content}
         components={{
           MDXImage: MDXImage,
-          DoubleImage: DoubleImage,
+          MultipleImage: MultipleImage,
           TrailOverview: TrailOverview,
           TrailSectionDetails: TrailSectionDetails,
           img: MDXImage,
-          VerticalImageLayout,
+          Iframe: Iframe,
+          VerticalImageLayout: VerticalImageLayout,
+          GearList: GearList,
           h1: ({ children, ...props }) => (
             <h1 className="text-3xl font-bold mb-6 mt-8" {...props}>
               {children}
@@ -88,7 +70,7 @@ export function PostBody({ content }: Props) {
             </ol>
           ),
           li: ({ children, ...props }) => (
-            <li className="ml-4" {...props}>
+            <li className="ml-4 text-base md:text-lg" {...props}>
               {children}
             </li>
           ),

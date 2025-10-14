@@ -4,6 +4,8 @@ import { getPosts, getPostByPath } from "@/lib/api";
 import Header from "@/app/_components/header";
 import { PostBody } from "@/app/_components/post-body";
 import { PostHeader } from "@/app/_components/post-header";
+import WindingPath from "@/app/_components/winding-path";
+import { GearList } from "@/app/_components/gear-list";
 
 interface Params {
   params: Promise<{

@@ -18,6 +18,8 @@ const config: Config = {
         background: "#fcfdf7",
         title: "#2e3c21",
         accent: "#D28D25",
+        accentTint: "#c49041",
+        accentTintDarker: "#AB7C34",
         accentBg: "#f0e7d7",
       },
       spacing: {
