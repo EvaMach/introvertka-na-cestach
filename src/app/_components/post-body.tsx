@@ -5,13 +5,11 @@ import MultipleImage from "./multiple-image";
 import TrailOverview from "./trail-overview";
 import TrailSectionDetails from "./trail-section-details";
 import { GearList } from "./gear-list";
-import Iframe from "./iframe";
 import VerticalImageLayout from "./vertical-image-layout";
 import HeadingUnderline from "./heading-underline";
 import TableOfContents from "./table-of-contents";
 import { generateId } from "@/lib/utils";
 import Checklist from "./checklist";
-import WrapContainer from "./wrap-container";
 
 interface Props {
   content: string;
@@ -29,7 +27,6 @@ export function PostBody({ content }: Props) {
           TrailSectionDetails: TrailSectionDetails,
           TableOfContents: TableOfContents,
           img: MDXImage,
-          Iframe: Iframe,
           VerticalImageLayout: VerticalImageLayout,
           GearList: GearList,
           Checklist: Checklist,
