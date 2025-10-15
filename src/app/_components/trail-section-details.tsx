@@ -22,7 +22,7 @@ const localizationMap: { [key: string]: string } = {
   wildCamping: "Spaní na divoko",
   provisions: "Zásoby",
   signal: "Signál",
-  sauna: "Sauna (teplá voda)",
+  sauna: "Sauna",
 };
 
 export const renderDistance = (distance: string) => {
