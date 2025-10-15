@@ -1,6 +1,6 @@
 const WindingPath = () => {
   return (
-    <div className="absolute w-full -bottom-5">
+    <div className="absolute w-full -bottom-10 md:-bottom-5">
       {/* Mobile version */}
       <svg
         width="100%"

@@ -44,7 +44,7 @@ export function GearList(props: GearListProps) {
   }
 
   return (
-    <div className="w-[95vw] lg:-mx-36 xl:-mx-56 overflow-x-scroll pb-4 mt-8">
+    <div className="lg:-mx-36 xl:-mx-56 overflow-x-scroll pb-4 mt-8">
       <div className="flex gap-6 min-w-min">
         {categories.map((category) => {
           const items = props[category] || [];

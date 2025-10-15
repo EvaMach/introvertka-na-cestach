@@ -1,3 +1,4 @@
+import { Overview } from "@/app/_components/trail-overview";
 import fs from "fs";
 import matter from "gray-matter";
 import { join } from "path";
@@ -12,7 +13,7 @@ export type Post = {
     url: string;
   };
   content: string;
-  preview?: boolean;
+  overview?: Overview;
 };
 
 const postsDirectory = join(process.cwd(), "_posts");

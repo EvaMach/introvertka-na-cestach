@@ -2,15 +2,25 @@ import CoverImage from "./cover-image";
 import DateFormatter from "./date-formatter";
 import { PostTitle } from "@/app/_components/post-title";
 import WindingPath from "./winding-path";
+import TrailOverview, { Overview } from "./trail-overview";
+import TableOfContents from "./table-of-contents";
+import WrapContainer from "./wrap-container";
 
 type Props = {
   title: string;
   coverImage: string;
   date: string;
   excerpt: string;
+  overview?: Overview;
 };
 
-export function PostHeader({ title, coverImage, date, excerpt }: Props) {
+export function PostHeader({
+  title,
+  coverImage,
+  date,
+  excerpt,
+  overview,
+}: Props) {
   return (
     <>
       <section className="flex flex-col md:flex-row gap-6 md:gap-12 relative">
@@ -26,6 +36,19 @@ export function PostHeader({ title, coverImage, date, excerpt }: Props) {
         </div>
         <WindingPath />
       </section>
+      {overview && (
+        <section className="flex flex-wrap gap-4 md:gap-8 items-baseline ">
+          <TrailOverview overview={overview} />
+          <TableOfContents
+            titles={[
+              "Obecné informace",
+              "Úseky",
+              "Gearlist",
+              "To do před odjezdem",
+            ]}
+          />
+        </section>
+      )}
     </>
   );
 }

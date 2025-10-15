@@ -93,6 +93,7 @@ export default async function Post(props: Params) {
           excerpt={post.excerpt}
           coverImage={post.coverImage}
           date={post.date}
+          overview={post.overview}
         />
         <PostBody content={content} />
       </article>

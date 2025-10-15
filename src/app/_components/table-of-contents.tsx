@@ -32,7 +32,7 @@ export default function TableOfContents({ titles }: Props) {
   };
 
   return (
-    <nav className="mb-8">
+    <nav className="w-full md:w-auto">
       <h3 className="text-lg font-semibold mb-4 text-stone-900">Obsah</h3>
       <ul className="space-y-2">
         {titles.map((title) => {
