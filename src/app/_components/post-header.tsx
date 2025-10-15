@@ -4,7 +4,6 @@ import { PostTitle } from "@/app/_components/post-title";
 import WindingPath from "./winding-path";
 import TrailOverview, { Overview } from "./trail-overview";
 import TableOfContents from "./table-of-contents";
-import WrapContainer from "./wrap-container";
 
 type Props = {
   title: string;
