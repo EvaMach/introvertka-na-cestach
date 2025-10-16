@@ -12,7 +12,7 @@ export default function Intro() {
         <h1
           className={`text-5xl max-w-[30rem] md:text-7xl text-title font-extrabold tracking-tight leading-tight md:leading-[4rem] md:pr-8 ${playfairDisplay.className}`}
         >
-          Introvertka na cestách
+          Introvertka na&nbsp;cestách
         </h1>
       </Link>
       <h4

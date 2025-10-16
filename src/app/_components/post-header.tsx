@@ -36,7 +36,7 @@ export function PostHeader({
         <WindingPath />
       </section>
       {overview && (
-        <section className="flex flex-wrap gap-4 md:gap-8 items-baseline ">
+        <section className="flex flex-wrap md:gap-8 items-baseline ">
           <TrailOverview overview={overview} />
           <TableOfContents
             titles={[
