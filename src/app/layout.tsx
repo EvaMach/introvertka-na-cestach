@@ -5,7 +5,11 @@ import "./globals.css";
 import Intro from "./_components/intro";
 import Container from "./_components/container";
 
-const monteserrat = Montserrat({ subsets: ["latin"] });
+const monteserrat = Montserrat({
+  subsets: ["latin"],
+  display: "swap",
+  preload: true,
+});
 
 export const metadata: Metadata = {
   title: `Introvertka na cestách`,

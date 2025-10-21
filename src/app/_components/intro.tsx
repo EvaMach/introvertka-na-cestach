@@ -3,6 +3,8 @@ import { Playfair_Display } from "next/font/google";
 
 const playfairDisplay = Playfair_Display({
   subsets: ["latin"],
+  display: "swap",
+  preload: true,
 });
 
 export default function Intro() {
