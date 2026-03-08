@@ -20,6 +20,7 @@ export function PostBody({ content }: Props) {
     <div className="max-w-3xl mx-auto text-justify first-letter:text-3xl first-letter:font-semibold first-letter:text-accent">
       <MDXRemote
         source={content}
+        options={{ blockJS: false, blockDangerousJS: false }}
         components={{
           MDXImage: MDXImage,
           MultipleImage: MultipleImage,
