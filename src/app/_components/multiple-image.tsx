@@ -18,7 +18,7 @@ export default function MultipleImage({
 
   return (
     <>
-      <div className="lg:-mx-36 xl:-mx-56 gap-4 flex flex-col justify-between lg:flex-row items-center">
+      <div className="lg:-mx-56 xl:-mx-56 gap-4 flex flex-col justify-between lg:flex-row items-center">
         {imageSrcs.map((src, index) => (
           <Image
             key={index}
@@ -29,7 +29,7 @@ export default function MultipleImage({
             src={src}
             loading="lazy"
             className={`w-full rounded object-cover max-h-96 shadow-lg ${
-              imageSrcs.length > 2 ? "max-w-[400]" : "max-w-[600]"
+              imageSrcs.length > 2 ? "max-w-[400px]" : "max-w-[600px]"
             }`}
             onClick={() =>
               openModal(src, imageAlts[index], 600, 400, "horizontal")
